@@ -14,17 +14,25 @@
 // console.log(document.images);
 
 // get element by id
-var headerTitle = document.getElementById('header-title');
-var header = document.getElementById('main-header');
-console.log(headerTitle);
-// headerTitle.textcontent = 'hello';
-// headerTitle.innerText = 'goodbye';
+// var headerTitle = document.getElementById('header-title');
+// var header = document.getElementById('main-header');
+// console.log(headerTitle);
+// // headerTitle.textcontent = 'hello';
+// // headerTitle.innerText = 'goodbye';
 
-header.style.borderBottom = 'solid 3px #000';
+// header.style.borderBottom = 'solid 3px #000';
 
-var addItems = document.getElementById('add');
-console.log(addItems);
+// var addItems = document.getElementById('add');
+// console.log(addItems);
 
-addItems.style.color = 'green';
+// addItems.style.color = 'green';
 
  
+var items = document.getElementsByClassName('list-group-item');
+console.log(items);
+console.log(items[1]);
+items[2].style.backgroundColor = 'green';
+items[0].style.fontWeight  = 'bold';
+items[1].style.fontWeight  = 'bold';
+items[3].style.fontWeight  = 'bold';
+items[2].style.fontWeight  = 'bold';
