@@ -1,36 +1,53 @@
 
+var newDiv = document.createElement('div');
+
+// add class 
+newDiv.className = 'hello';
+
+// add id 
+newDiv.id = 'hello1';
+
+// add attribute
+newDiv.setAttribute('title','hello div');
+
+// create text node 
+var newDivText = document.createTextNode('hello world');
+
+// add text to div
+newDiv.appendChild(newDivText);
+
+var container = document.querySelector('header .container');
+var h1 = document.querySelector('header h1');
 
 
-// Deliverable :
-// Make the 2nd item have green background color
-// Make the 3rd item invisible
-
-var secondItem = document.querySelector('.list-group-item:nth-child(2)');
-secondItem.style.backgroundColor = 'green';
-
-
-var thirdItem = document.querySelector('.list-group-item:nth-child(3)');
-thirdItem.style.display = "none";
-
-
-
-// Deliverable
-
-// Using QuerySelectorALL change the font color to green for 2nd item in the item list
-// Choose all the odd elements and make their background green using QuerySelectorALL
-
-
-var secondItem = document.querySelectorAll('.list-group-item');
-secondItem[1].style.color = 'red';
-
-var odd = document.querySelectorAll('li:nth-child(odd)');
-
-for(var i =0; i < odd.length ; i++){
-    odd[i].style.backgroundColor = 'green';
-}
+container.insertBefore(newDiv,h1);
 
 
 
+// Now go head and add HEllo word before Item 1
+
+
+var newli = document.createElement('li');
+
+// add class 
+newli.className = 'hello';
+
+// add id 
+newli.id = 'hello2';
+
+
+
+// create text node 
+var newliText = document.createTextNode('hello world');
+
+// add text to div
+newli.appendChild(newliText);
+
+var container = document.querySelector('#items');
+var h1 = document.querySelector('#helloid');
+
+
+container.insertBefore(newli,h1);
 
 
 
