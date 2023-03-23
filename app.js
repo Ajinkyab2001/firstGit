@@ -1,55 +1,36 @@
-// console.dir(document);
-
-// console.log(document.domain);
-// console.log(document.URL);
-// console.log(document.title);
-// console.log(document.doctype);
-// console.log(document.head);
-// console.log(document.body);
-// console.log(document.all);
-// console.log(document.all[10]);
-// document.all[10].textContent = 'hello';
-// console.log(document.forms);
-// console.log(document.links);
-// console.log(document.images);
-
-// get element by id
-// var headerTitle = document.getElementById('header-title');
-// var header = document.getElementById('main-header');
-// console.log(headerTitle);
-// // headerTitle.textcontent = 'hello';
-// // headerTitle.innerText = 'goodbye';
-
-// header.style.borderBottom = 'solid 3px #000';
-
-// var addItems = document.getElementById('add');
-// console.log(addItems);
-
-// addItems.style.color = 'green';
-
- 
-// var items = document.getElementsByClassName('list-group-item');
-// console.log(items);
-// console.log(items[1]);
-// items[2].style.backgroundColor = 'green';
-// items[0].style.fontWeight  = 'bold';
-// items[1].style.fontWeight  = 'bold';
-// items[3].style.fontWeight  = 'bold';
-// items[2].style.fontWeight  = 'bold';
 
 
-// And try editing it with getelementsbyclassname and then by getelementbytagname
 
-var li = document.getElementsByTagName('li');
-console.log(li);
-console.log(li[1]);
-li[4].style.backgroundColor = 'green';
+// Deliverable :
+// Make the 2nd item have green background color
+// Make the 3rd item invisible
+
+var secondItem = document.querySelector('.list-group-item:nth-child(2)');
+secondItem.style.backgroundColor = 'green';
 
 
-var items = document.getElementsByClassName('list-group-item');
-console.log(items);
-console.log(items[4]);
-items[4].style.backgroundColor = 'orange';
+var thirdItem = document.querySelector('.list-group-item:nth-child(3)');
+thirdItem.style.display = "none";
+
+
+
+// Deliverable
+
+// Using QuerySelectorALL change the font color to green for 2nd item in the item list
+// Choose all the odd elements and make their background green using QuerySelectorALL
+
+
+var secondItem = document.querySelectorAll('.list-group-item');
+secondItem[1].style.color = 'red';
+
+var odd = document.querySelectorAll('li:nth-child(odd)');
+
+for(var i =0; i < odd.length ; i++){
+    odd[i].style.backgroundColor = 'green';
+}
+
+
+
 
 
 
