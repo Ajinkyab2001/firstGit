@@ -1,53 +1,48 @@
-
-var newDiv = document.createElement('div');
-
-// add class 
-newDiv.className = 'hello';
-
-// add id 
-newDiv.id = 'hello1';
-
-// add attribute
-newDiv.setAttribute('title','hello div');
-
-// create text node 
-var newDivText = document.createTextNode('hello world');
-
-// add text to div
-newDiv.appendChild(newDivText);
-
-var container = document.querySelector('header .container');
-var h1 = document.querySelector('header h1');
+var form = document.getElementById('addForm');
+var itemList = document.getElementById('items');
 
 
-container.insertBefore(newDiv,h1);
+// Form submit event
+form.addEventListener('submit', addItem);
+// Delete event
+itemList.addEventListener('click', removeItem);
 
+// Add item
+function addItem(e){
+  e.preventDefault();
 
+  // Get input value
+  var newItem = document.getElementById('item').value;
 
-// Now go head and add HEllo word before Item 1
+  // Create new li element
+  var li = document.createElement('li');
+  // Add class
+  li.className = 'list-group-item';
+  // Add text node with input value
+  li.appendChild(document.createTextNode(newItem));
 
+  // Create del button element
+  var deleteBtn = document.createElement('button');
 
-var newli = document.createElement('li');
+  // Add classes to del button
+  deleteBtn.className = 'btn btn-danger btn-sm float-right delete';
 
-// add class 
-newli.className = 'hello';
+  // Append text node
+  deleteBtn.appendChild(document.createTextNode('X'));
 
-// add id 
-newli.id = 'hello2';
+  // Append button to li
+  li.appendChild(deleteBtn);
 
+  // Append li to list
+  itemList.appendChild(li);
+}
 
-
-// create text node 
-var newliText = document.createTextNode('hello world');
-
-// add text to div
-newli.appendChild(newliText);
-
-var container = document.querySelector('#items');
-var h1 = document.querySelector('#helloid');
-
-
-container.insertBefore(newli,h1);
-
-
-
+// Remove item
+function removeItem(e){
+  if(e.target.classList.contains('delete')){
+    if(confirm('Are You Sure?')){
+      var li = e.target.parentElement;
+      itemList.removeChild(li);
+    }
+  }
+}
